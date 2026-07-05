@@ -1,7 +1,7 @@
 from flask import Flask, jsonify
 import os
 
-ENV = os.environ["APP_ENV"]
+ENV = os.getenv("APP_ENV", "dev")
 app = Flask(__name__)
 
 

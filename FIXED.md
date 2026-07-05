@@ -35,3 +35,15 @@
   - traefik.http.services.caddy.loadbalancer.server.port: 80 (замість 8080)
   - healthcheck для app переведено з curl на python urllib
 - Причина: Caddy у контейнері слухає 80, а curl не гарантовано доступний у python-образі.
+
+
+
+Команди діагностики:
+
+- docker compose config
+- docker compose ps
+- docker compose logs --tail=200 app caddy traefik
+- curl.exe -i http://localhost/
+- curl.exe -i http://localhost/api/
+- curl.exe -i http://localhost/api/health
+- docker compose exec app env
